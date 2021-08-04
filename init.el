@@ -43,4 +43,8 @@
   :ensure t
   :hook (emacs-lisp-mode . highlight-defined-mode))
 
+(use-package elcord
+  :ensure t
+  :init (elcord-mode))
+
 ;;; init.el ends here
