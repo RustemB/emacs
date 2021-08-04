@@ -19,6 +19,7 @@
 (setq show-paren-style 'expression)
 
 (set-frame-font "monospace")
+(set-face-attribute 'default nil :height 180)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
