@@ -8,6 +8,8 @@
 
 
 (setq ring-bell-function #'ignore)
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 (blink-cursor-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -46,6 +48,7 @@
 
 (use-package elcord
   :ensure t
-  :init (elcord-mode))
+  :init (elcord-mode)
+  :config (setq elcord-editor-icon "emacs_material_icon"))
 
 ;;; init.el ends here
