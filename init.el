@@ -57,4 +57,6 @@
   :init (elcord-mode)
   :config (setq elcord-editor-icon "emacs_material_icon"))
 
+(use-package rust-mode
+  :ensure t)
 ;;; init.el ends here
