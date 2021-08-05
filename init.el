@@ -2,6 +2,8 @@
 
 ;;; Commentary:
 
+;; This is my personal Emacs configuration.
+
 ;;; Code:
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -59,4 +61,5 @@
 
 (use-package rust-mode
   :ensure t)
+
 ;;; init.el ends here
