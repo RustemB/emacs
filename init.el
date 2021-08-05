@@ -17,9 +17,6 @@
 (line-number-mode)
 (column-number-mode)
 
-(show-paren-mode t)
-(setq show-paren-style 'expression)
-
 (set-frame-font "monospace")
 (set-face-attribute 'default nil :height 180)
 
@@ -30,6 +27,12 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+(use-package paren
+  :ensure t
+  :config
+  (show-paren-mode t)
+  (setq show-paren-style 'expression))
 
 (use-package srcery-theme
   :ensure t
