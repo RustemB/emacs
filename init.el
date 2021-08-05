@@ -60,6 +60,7 @@
   :config (setq elcord-editor-icon "emacs_material_icon"))
 
 (use-package rust-mode
-  :ensure t)
+  :ensure t
+  :config (setq rust-format-on-save t))
 
 ;;; init.el ends here
