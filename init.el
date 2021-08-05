@@ -6,7 +6,6 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-
 (setq ring-bell-function #'ignore)
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
@@ -40,7 +39,11 @@
   (load-theme 'srcery t))
 
 (use-package lsp-mode
-  :ensure t)
+  :ensure t
+  :init (setq lsp-keymap-prefix "C-c l")
+  :hook ((python-mode . lsp)
+	 (c-mode . lsp)
+	 (c++-mode . lsp)))
 
 (use-package magit
   :ensure t)
