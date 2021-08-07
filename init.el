@@ -18,6 +18,9 @@
 (line-number-mode)
 (column-number-mode)
 
+(setq user-mail-address "rustemb@systemli.org"
+      user-full-name "Rustem Bakirov")
+
 (set-frame-font "monospace")
 (set-face-attribute 'default nil :height 180)
 
@@ -29,19 +32,18 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(setq use-package-always-ensure t)
+
 (use-package paren
-  :ensure t
   :config
   (show-paren-mode t)
   (setq show-paren-style 'expression))
 
 (use-package srcery-theme
-  :ensure t
   :config
   (load-theme 'srcery t))
 
 (use-package lsp-mode
-  :ensure t
   :init (setq lsp-keymap-prefix "C-c l")
   :hook ((python-mode . lsp)
 	 (c-mode . lsp)
@@ -65,24 +67,21 @@
     :multi-root t
     :server-id 'prolog-ls)))
 
-(use-package magit
-  :ensure t)
+(use-package magit)
 
 (use-package highlight-defined
-  :ensure t
   :hook (emacs-lisp-mode . highlight-defined-mode))
 
 (use-package elcord
-  :ensure t
   :init (elcord-mode)
   :config (setq elcord-editor-icon "emacs_material_icon"))
 
 (use-package rust-mode
-  :ensure t
   :config (setq rust-format-on-save t))
 
 (use-package which-key
-  :ensure t
   :config (which-key-mode))
+
+(use-package org)
 
 ;;; init.el ends here
