@@ -1,4 +1,4 @@
-;;; init.el --- Rustem B.'s Emacs config file.           -*- lexical-binding: t; -*-
+;;; init.el --- Rustem B.'s Emacs config file.       -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -45,7 +45,13 @@
   :init (setq lsp-keymap-prefix "C-c l")
   :hook ((python-mode . lsp)
 	 (c-mode . lsp)
-	 (c++-mode . lsp)))
+	 (c++-mode . lsp)
+	 (prolog-mode . lsp)
+	 (rust-mode . lsp)
+	 (sh-mode . lsp))
+  :config
+  (setq lsp-rust-library-directories '("~/.config/cargo/registry/src"
+				       "~/.config/rustup/toolchains")))
 
 (use-package magit
   :ensure t)
@@ -62,5 +68,9 @@
 (use-package rust-mode
   :ensure t
   :config (setq rust-format-on-save t))
+
+(use-package which-key
+  :ensure t
+  :config (which-key-mode))
 
 ;;; init.el ends here
