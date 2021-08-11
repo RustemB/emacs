@@ -32,7 +32,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(setq use-package-always-ensure t)
+(eval-and-compile
+  (setq use-package-always-ensure t
+        use-package-expand-minimally t))
 
 (use-package paren
   :config
@@ -83,5 +85,11 @@
   :config (which-key-mode))
 
 (use-package org)
+
+(use-package julia-mode)
+
+(use-package j-mode
+  :config
+  (setq j-console-cmd "/usr/lib/j9/bin/jconsole"))
 
 ;;; init.el ends here
