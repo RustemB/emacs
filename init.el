@@ -33,8 +33,7 @@
   (package-install 'use-package))
 
 (eval-and-compile
-  (setq use-package-always-ensure t
-        use-package-expand-minimally t))
+  (setq use-package-always-ensure t))
 
 (use-package paren
   :config
@@ -91,5 +90,11 @@
 (use-package j-mode
   :config
   (setq j-console-cmd "/usr/lib/j9/bin/jconsole"))
+
+(use-package elm-mode
+  :hook (elm-mode . elm-format-on-save-mode)
+  :bind ("C-c C-f" . elm-format-buffer)
+  :config (setq elm-tags-on-save t
+		elm-tags-exclude-elm-stuff nil))
 
 ;;; init.el ends here
